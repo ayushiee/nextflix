@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Login.module.scss';
+import LoginBg from '../assets/loginBg.jpg';
 
 export default function Home() {
   return (
@@ -12,7 +13,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Netflix clone</h1>
+        <Image src={LoginBg} alt='background image' placeholder='blur' layout='fill' className={styles.main__bgImage} />
+        <div className={styles.main__card}>
+          <h1>
+            Netflix clone
+          </h1>
+          <p>A simple netflix clone built using Next.js</p>
+          <div className={styles.button}>Sign in</div>
+        </div>
       </main>
     </div>
   );
