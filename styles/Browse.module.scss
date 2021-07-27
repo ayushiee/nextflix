@@ -7,60 +7,125 @@
 //   height: 100vh;
 //   background-color: $secondary;
 
-  .navBar {
-    // background-color: $background-overlay;
-    background-image: linear-gradient(to bottom, $navBar-transparent 10%, $navBar-gradient);
+.navBar {
+  background-image: linear-gradient(to bottom, $navBar-transparent 10%, $navBar-gradient);
+  transition: all 0.2s ease-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: sticky;
+  padding: 0.8rem;
+  top: 0;
+
+  &__filled {
+    background-image: none;
+    background-color: $secondary;
     transition: all 0.2s ease-out;
-    // opacity: 0.3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     position: sticky;
-    padding-left: 0.6rem;
+    padding: 0.8rem;
     top: 0;
+  }
 
-   
-    &__left,
-    &__right {
-      display: flex;
-      flex-direction: row;
-      color: $text;
-      align-items: center;
-     
-      .options {
-        padding: 0.3rem;
-        margin: 0 0.2rem;
-        cursor: pointer;
-        transition: linear 200ms ease-in;
+  &__left {
+    display: flex;
+    flex-direction: row;
+    color: $text;
+    align-items: center;
+    margin-left: 1.6rem;
 
-        &:hover {
-          color: $text-hover;
-        }
+    .options {
+      padding: 0.3rem;
+      margin: 0 0 0 0.8rem;
+      cursor: pointer;
+      transition: linear 200ms ease-in;
+
+      &:hover {
+        color: $text-hover;
       }
     }
   }
 
-//   .spotlight {
-//     background-color: tan;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 80%;
-//     z-index: 0;
-//     &__image {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//     background: linear-gradient(77deg, #00000099 0, rgba(0, 0, 0, 0) 85%);
-//   }
-//   }
+  &__right {
+    display: flex;
+    flex-direction: row;
+    color: $text;
+    align-items: center;
+    margin-right: 2rem;
 
-//   .eh {
-//     z-index: 2;
-//   }
+    .options {
+      padding: 0.3rem;
+      margin: 0 0.2rem;
+      cursor: pointer;
+      transition: linear 200ms ease-in;
+
+      &:hover {
+        color: $text-hover;
+      }
+    }
+
+    .icon {
+      font-size: 1.4rem;
+      margin: 0 0.7rem;
+      cursor: pointer;
+      transition: linear 250ms ease-in-out;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+
+    .profile {
+      padding: 0 0.9rem;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      cursor: pointer;
+
+      .smallIcon {
+        transition:  200ms ease-in-out;
+      }
+
+      &:hover {
+        .smallIcon {
+          transform: rotate(180deg);
+        }
+      }
+
+      .user {
+        height: 2rem;
+        border-radius: 0.2rem;
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}
+
+  // .spotlight {
+  //   background-color: tan;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 80%;
+  //   z-index: 0;
+  //   &__image {
+  //     width: 100%;
+  //     height: 100%;
+  //     object-fit: cover;
+  //   background: linear-gradient(77deg, #00000099 0, rgba(0, 0, 0, 0) 85%);
+  // }
+  // }
+
+  // .eh {
+  //   z-index: 2;
+  // }
 
 //   .bottomContainer {
 //     background-color: honeydew;
