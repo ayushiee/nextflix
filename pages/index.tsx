@@ -9,7 +9,7 @@ export default function Home() {
   const router = useRouter();
 
   const onSignIn = () => {
-    router.push('/Home')
+    router.push('/browse')
   }
 
   return (

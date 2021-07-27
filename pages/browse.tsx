@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.scss';
+
+import styles from '../styles/Browse.module.scss';
+import nfLogo from  '../assets/nfLogo.png';
+
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 const listRight = ['icon1', 'icon2', 'icon3', 'icon4'];
 
@@ -16,6 +19,7 @@ export default function Home() {
 
       <div className={styles.navBar}>
         <div className={styles.navBar__left}>
+          <Image src={nfLogo} alt='' width={100} height={70} className={styles.logo} />
           {listLeft.map((item, index) => (
             <div key={index} className={styles.options}>
               {item}
@@ -31,7 +35,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.spotlight}>
+      {/* <div className={styles.spotlight}>
         <img
           src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80'
           alt='spotlight'
@@ -39,12 +43,12 @@ export default function Home() {
           // width={1200}
           className={styles.spotlight__image}
         />
-      </div>
+      </div> */}
 
-      <div className={styles.bottomContainer}>
+      {/* <div className={styles.bottomContainer}> */}
         bottom
-        <div>hehhehehe</div>
-      </div>
+        <div className={styles.eh}>hehhehehe</div>
+      {/* </div> */}
     </div>
   );
 }
