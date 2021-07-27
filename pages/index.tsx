@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import styles from '../styles/Login.module.scss';
-import LoginBg from '../assets/loginBg.jpg';
+import LoginBg from '../public/assets/loginBg.jpg';
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   const router = useRouter();
 
   const onSignIn = () => {
