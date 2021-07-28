@@ -1,27 +1,14 @@
 @import '../styles/variables.scss';
 
-// .container {
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   height: 100vh;
-//   background-color: $secondary;
-
-.navBar {
-  background-image: linear-gradient(to bottom, $navBar-transparent 10%, $navBar-gradient);
-  transition: all 0.2s ease-out;
+.container {
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  position: sticky;
-  padding: 0.8rem;
-  top: 0;
+  flex-direction: column;
+  background-color: $secondary;
+  color: $text;
 
-  &__filled {
-    background-image: none;
-    background-color: $secondary;
+  .navBar {
+    background-image: linear-gradient(to bottom, $navBar-transparent 10%, $navBar-gradient);
     transition: all 0.2s ease-out;
     display: flex;
     flex-direction: row;
@@ -31,107 +18,135 @@
     position: sticky;
     padding: 0.8rem;
     top: 0;
-  }
 
-  &__left {
-    display: flex;
-    flex-direction: row;
-    color: $text;
-    align-items: center;
-    margin-left: 1.6rem;
-
-    .options {
-      padding: 0.3rem;
-      margin: 0 0 0 0.8rem;
-      cursor: pointer;
-      transition: linear 200ms ease-in;
-
-      &:hover {
-        color: $text-hover;
-      }
-    }
-  }
-
-  &__right {
-    display: flex;
-    flex-direction: row;
-    color: $text;
-    align-items: center;
-    margin-right: 2rem;
-
-    .options {
-      padding: 0.3rem;
-      margin: 0 0.2rem;
-      cursor: pointer;
-      transition: linear 200ms ease-in;
-
-      &:hover {
-        color: $text-hover;
-      }
-    }
-
-    .icon {
-      font-size: 1.4rem;
-      margin: 0 0.7rem;
-      cursor: pointer;
-      transition: linear 250ms ease-in-out;
-
-      &:hover {
-        transform: translateY(-1px);
-      }
-    }
-
-    .profile {
-      padding: 0 0.9rem;
+    &__filled {
+      background-image: none;
+      background-color: $secondary;
+      transition: all 0.2s ease-out;
       display: flex;
-      align-items: center;
       flex-direction: row;
-      cursor: pointer;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      position: sticky;
+      padding: 0.8rem;
+      top: 0;
+    }
 
-      .smallIcon {
-        transition:  200ms ease-in-out;
+    &__left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 3rem;
+
+      .options {
+        padding: 0.3rem;
+        margin: 0 0 0 0.8rem;
+        cursor: pointer;
+        transition: linear 200ms ease-in;
+
+        &:hover {
+          color: $text-hover;
+        }
       }
+    }
 
-      &:hover {
-        .smallIcon {
-          transform: rotate(180deg);
+    &__right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 2rem;
+
+      .options {
+        padding: 0.3rem;
+        margin: 0 0.2rem;
+        cursor: pointer;
+        transition: linear 200ms ease-in;
+
+        &:hover {
+          color: $text-hover;
         }
       }
 
-      .user {
-        height: 2rem;
-        border-radius: 0.2rem;
-        margin-right: 0.3rem;
+      .icon {
+        font-size: 1.4rem;
+        margin: 0 0.7rem;
+        cursor: pointer;
+        transition: linear 250ms ease-in-out;
+
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+
+      .profile {
+        padding: 0 0.9rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        cursor: pointer;
+
+        .smallIcon {
+          transition: 200ms ease-in-out;
+        }
+
+        &:hover {
+          .smallIcon {
+            transform: rotate(180deg);
+          }
+        }
+
+        .user {
+          height: 2rem;
+          border-radius: 0.2rem;
+          margin-right: 0.3rem;
+        }
+      }
+    }
+  }
+
+  .spotlight {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 80vh;
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 85%;
+      z-index: 0;
+      object-fit: fill;
+    }
+
+    &__details {
+      z-index: 10;
+      width: 35%;
+      margin-left: 3.5rem;
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+
+      .title {
+        font-size: 2.8rem;
+        font-weight: 600;
+        padding: 0.4rem;
+      }
+
+      .synopsis {
+        font-size: 1.3rem;
+        font-weight: 400;
+        padding: 0.3rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
 }
-
-  // .spotlight {
-  //   background-color: tan;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 80%;
-  //   z-index: 0;
-  //   &__image {
-  //     width: 100%;
-  //     height: 100%;
-  //     object-fit: cover;
-  //   background: linear-gradient(77deg, #00000099 0, rgba(0, 0, 0, 0) 85%);
-  // }
-  // }
-
-  // .eh {
-  //   z-index: 2;
-  // }
-
-//   .bottomContainer {
-//     background-color: honeydew;
-//     height: 60%;
-//     z-index: 5;
-//     align-self: baseline;
-//     justify-self: end;
-//   }
-// }

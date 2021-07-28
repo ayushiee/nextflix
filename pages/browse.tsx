@@ -12,10 +12,11 @@ import nfLogo from '../public/assets/nfLogo.png';
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
 const SCROLL_LIMIT: number = 80;
+const DUMMY_IMAGE: string =
+  'https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
-
   const navBackground = isScrolled ? styles.navBar__filled : styles.navBar;
 
   return (
@@ -52,33 +53,53 @@ export default function Browse(): React.ReactElement {
           </div>
         </div>
       </motion.div>
+
       <div className={styles.spotlight}>
-        <img
-          src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80'
-          alt='spotlight'
-          // height={400}
-          // width={1200}
-          className={styles.spotlight__image}
-        />
-        <img
-          src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80'
-          alt='spotlight'
-          // height={400}
-          // width={1200}
-          className={styles.spotlight__image}
-        />
-        <img
-          src='https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80'
-          alt='spotlight'
-          // height={400}
-          // width={1200}
-          className={styles.spotlight__image}
-        />
+        <img src={DUMMY_IMAGE} alt='spotlight' className={styles.spotlight__image} />
+        <div className={styles.spotlight__details}>
+          <div className={styles.title}>Project Name</div>
+          <div className={styles.synopsis}>
+            After a global blackout erases humanity's memory of the Beatles, a struggling musician performs the group's
+            music and becomes a pop sensation.
+          </div>
+        </div>
       </div>
-      {/* <div className={styles.bottomContainer}> */}
-      bottom
-      <div className={styles.eh}>hehhehehe</div>
-      {/* </div> */}
+
+      <div>
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+        scroll <br />
+      </div>
     </div>
   );
 }
