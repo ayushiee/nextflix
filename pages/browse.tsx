@@ -2,12 +2,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { IoSearch, IoNotifications } from 'react-icons/io5';
-import { BiCaretDown } from 'react-icons/bi';
+import { IoSearch, IoNotifications, IoPlaySharp } from 'react-icons/io5';
+import { BiCaretDown, BiInfoCircle } from 'react-icons/bi';
 
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import nfLogo from '../public/assets/nfLogo.png';
+import Button from '../components/Button';
 
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
@@ -61,6 +62,10 @@ export default function Browse(): React.ReactElement {
           <div className={styles.synopsis}>
             After a global blackout erases humanity's memory of the Beatles, a struggling musician performs the group's
             music and becomes a pop sensation.
+          </div>
+          <div className={styles.buttonRow}>
+            <Button label='Play' filled Icon={IoPlaySharp} />
+            <Button label='More Info' Icon={BiInfoCircle} />
           </div>
         </div>
       </div>

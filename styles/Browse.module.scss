@@ -148,6 +148,12 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
+
+      .buttonRow {
+        display: flex;
+        flex-direction: row;
+        margin: 0.3rem 0;
+      }
     }
   }
 }

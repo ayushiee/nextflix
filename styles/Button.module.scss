@@ -1,0 +1,32 @@
+@import '../styles/variables.scss';
+
+.button {
+  z-index: 10;
+  color: $black;
+  text-shadow: none;
+  width: fit-content;
+  padding: 0.7rem 1.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.4rem;
+  outline: none;
+  border: none;
+ 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: 0.8rem;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+  }
+}
