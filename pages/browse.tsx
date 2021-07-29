@@ -9,6 +9,7 @@ import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import nfLogo from '../public/assets/nfLogo.png';
 import Button from '../components/Button';
+import Cards from '../components/Cards';
 
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
@@ -71,24 +72,7 @@ export default function Browse(): React.ReactElement {
       </div>
 
       <div>
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
+        <Cards />
         scroll <br />
         scroll <br />
         scroll <br />
