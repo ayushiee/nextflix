@@ -11,15 +11,18 @@ interface ButtonProps {
 
 export default function Button(props: ButtonProps): React.ReactElement {
   const { filled, label, Icon, filledRounded, outlineRounded } = props;
-  const backgroundColor = filled ? 'white' : '#6d6d6db3';
-  const fontColor = filled ? 'black' : 'white';
+  const backgroundColor = filled || filledRounded ? 'white' : '#6d6d6db3';
+  const fontColor = filled || filledRounded ? 'black' : 'white';
 
   return (
     <>
-      <button className={styles.button} style={{ backgroundColor: `${backgroundColor}`, color: `${fontColor}` }}>
+       <button className={styles.button} style={{ backgroundColor: `${backgroundColor}`, color: `${fontColor}` }}>
         <Icon className={styles.icon} />
         <span className={styles.label}>{label}</span>
       </button>
+       {outlineRounded && <button className={styles.outlineRounded} style={{ backgroundColor: `${backgroundColor}`, color: `${fontColor}` }}>
+        <Icon className={styles.icon} />
+      </button>}
     </>
   );
 }
