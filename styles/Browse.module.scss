@@ -109,7 +109,7 @@
     display: flex;
     align-items: flex-end;
     width: 100%;
-    height: 90vh;
+    height: 85vh;
 
     &__image {
       position: absolute;
@@ -119,7 +119,7 @@
       height: 92%;
       z-index: 0;
       object-fit: fill;
-      mask-image: linear-gradient(to bottom, $secondary 40%, transparent 100%);
+      mask-image: linear-gradient(to bottom, $secondary 36%, transparent 100%);
     }
 
     &__details {
