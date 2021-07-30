@@ -10,16 +10,16 @@ import styles from '../styles/Cards.module.scss';
 SwiperCore.use([Pagination, Navigation]);
 
 interface CardsProps {
-  small?: boolean;
+  original?: boolean;
 }
 
-export default function Cards({ small = true }: CardsProps): React.ReactElement {
+export default function Cards({ original = true }: CardsProps): React.ReactElement {
   return (
     <>
       <div className={styles.cardContainer}>
         <h2>title</h2>
         <div className={styles.cardRow}>
-          {small ? <div className={styles.card}></div> : <div className={styles.longCard}></div>}
+          {original ? <div className={styles.card}></div> : <div className={styles.longCard}></div>}
         </div>
       </div>
     </>
