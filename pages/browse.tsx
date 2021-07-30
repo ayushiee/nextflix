@@ -14,8 +14,7 @@ import Cards from '../components/Cards';
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
 const SCROLL_LIMIT: number = 80;
-const DUMMY_IMAGE: string =
-  'https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80';
+const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
