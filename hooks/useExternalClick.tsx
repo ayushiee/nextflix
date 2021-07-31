@@ -1,11 +1,6 @@
 import { MutableRefObject, useEffect } from 'react';
 
-interface Props {
-  ref: MutableRefObject<any>;
-  callback: () => void;
-}
-
-export default function useExternalClick({ ref, callback }: Props): void {
+export default function useExternalClick(ref: MutableRefObject<any>, callback: () => void): void {
   const onClick = (event: MouseEvent) => {
     if (!ref?.current?.contains(event.target)) {
       callback();
