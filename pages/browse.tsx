@@ -23,7 +23,6 @@ export default function Browse(): React.ReactElement {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-   
       <Navbar isScrolled={isScrolled} />
 
       <div className={styles.spotlight}>
