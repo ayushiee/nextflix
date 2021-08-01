@@ -107,11 +107,14 @@
           color: $text;
           position: absolute;
           margin-top: 6rem;
-          padding: 0.7rem;
-          // top: 10;
-          right: 5;
-          border: $button-border;
-          cursor: pointer;
+          padding: 0.6rem 0.9rem;
+          right: 8;
+          border: $button-border solid 1.5px;
+          cursor: pointer; 
+
+          &:hover {
+            border-color: $text;
+          }
         }
       }
     }
