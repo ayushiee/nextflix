@@ -39,7 +39,7 @@
       transition: linear 200ms ease-in;
 
       &:hover {
-        color: $text-hover;
+        color: $white-hover;
       }
     }
   }
@@ -57,7 +57,7 @@
       transition: linear 200ms ease-in;
 
       &:hover {
-        color: $text-hover;
+        color: $white-hover;
       }
     }
 
@@ -97,7 +97,7 @@
 
       .signout {
         background-color: $card-color;
-        color: $text;
+        color: $white;
         position: absolute;
         margin-top: 6rem;
         padding: 0.6rem 0.9rem;
@@ -106,7 +106,7 @@
         cursor: pointer;
 
         &:hover {
-          border-color: $text;
+          border-color: $white
         }
       }
     }
