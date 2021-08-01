@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef } from 'react';
 import Image from 'next/image';
+import { NextRouter, useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { IoSearch, IoNotifications } from 'react-icons/io5';
 import { BiCaretDown } from 'react-icons/bi';
@@ -19,13 +20,15 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
   const navBackground = isScrolled ? styles.navBar__filled : styles.navBar;
   const [visible, setVisible] = useState<boolean>(false);
   const profileRef = useRef(null);
+  const router: NextRouter = useRouter();
 
   const onHover = (): void => {
-    console.log('click');
-    setVisible(!visible);
-    console.log('v: ', visible);
+    setVisible(true);
   };
+
   const onClose = (): void => setVisible(false);
+
+  const onSignout = (): Promise<boolean> => router.push('/');
 
   return (
     <motion.div
@@ -50,14 +53,11 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
         <IoSearch className={styles.icon} />
         <IoNotifications className={styles.icon} />
 
-        <div className={styles.profile} onClick={onHover}>
+        <div className={styles.profile} onMouseOver={onHover}>
           <img src='../assets/avatar.png' alt='user' className={styles.user} />
           <BiCaretDown className={styles.smallIcon} />
           <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
-            <button onClick={() => console.log('Sign out!')}>
-              Sign out
-            </button>
-            {/* {visible && <button className={styles.signout} onClick={() => console.log('Sign out!')}>Sign out</button>} */}
+            <div onClick={onSignout}>Sign out</div>
           </Dialog>
         </div>
       </div>
