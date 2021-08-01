@@ -101,6 +101,18 @@
           border-radius: 0.2rem;
           margin-right: 0.3rem;
         }
+
+        .signout {
+          background-color: $card-color;
+          color: $text;
+          position: absolute;
+          margin-top: 6rem;
+          padding: 0.7rem;
+          // top: 10;
+          right: 5;
+          border: $button-border;
+          cursor: pointer;
+        }
       }
     }
   }
