@@ -9,6 +9,7 @@ import { BiCaretDown } from 'react-icons/bi';
 import styles from '../../styles/Browse.module.scss';
 import nfLogo from '../../public/assets/nfLogo.png';
 import Dialog from '../Dialog';
+import { ROUTES } from '../../utils/config';
 
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
@@ -28,7 +29,7 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
 
   const onClose = (): void => setVisible(false);
 
-  const onSignout = (): Promise<boolean> => router.push('/');
+  const onSignout = (): Promise<boolean> => router.push(ROUTES.HOME);
 
   return (
     <motion.div

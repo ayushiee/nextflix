@@ -1,15 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 
 import styles from '../styles/Login.module.scss';
 import LoginBg from '../public/assets/loginBg.jpg';
+import { ROUTES } from '../utils/config';
 
 export default function Home(): React.ReactElement {
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   const onSignIn = () => {
-    router.push('/browse')
+    router.push(ROUTES.BROWSE)
   }
 
   return (
