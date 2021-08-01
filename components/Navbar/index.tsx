@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { IoSearch, IoNotifications } from 'react-icons/io5';
 import { BiCaretDown } from 'react-icons/bi';
 
-import styles from '../../styles/Browse.module.scss';
+import styles from '../../styles/Navbar.module.scss';
 import nfLogo from '../../public/assets/nfLogo.png';
 import Dialog from '../Dialog';
 import { ROUTES } from '../../utils/config';
