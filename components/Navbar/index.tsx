@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { IoSearch, IoNotifications } from 'react-icons/io5';
 import { BiCaretDown } from 'react-icons/bi';
 
-import useScrollLimit from '../../hooks/useScrollLimit';
 import styles from '../../styles/Browse.module.scss';
 import nfLogo from '../../public/assets/nfLogo.png';
 import Dialog from '../Dialog';
@@ -54,8 +53,8 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
         <div className={styles.profile} onClick={onHover}>
           <img src='../assets/avatar.png' alt='user' className={styles.user} />
           <BiCaretDown className={styles.smallIcon} />
-          <Dialog ref={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
-            <button className={styles.signout} onClick={() => console.log('Sign out!')}>
+          <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
+            <button onClick={() => console.log('Sign out!')}>
               Sign out
             </button>
             {/* {visible && <button className={styles.signout} onClick={() => console.log('Sign out!')}>Sign out</button>} */}
