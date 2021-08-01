@@ -1,59 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { IoSearch, IoNotifications, IoPlaySharp } from 'react-icons/io5';
-import { BiCaretDown, BiInfoCircle } from 'react-icons/bi';
+import { IoPlaySharp } from 'react-icons/io5';
+import { BiInfoCircle } from 'react-icons/bi';
 
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
-import nfLogo from '../public/assets/nfLogo.png';
 import Button from '../components/Button';
 import Cards from '../components/Cards';
-
-const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
+import Navbar from '../components/Navbar';
 
 const SCROLL_LIMIT: number = 80;
 const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
-  const navBackground = isScrolled ? styles.navBar__filled : styles.navBar;
-
+  
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nextflix Home</title>
+        <title>Nextflix</title>
         <meta name='description' content='Netflix clone, made using Next.js' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <motion.div
-        className={navBackground}
-        // initial='hidden'
-        // animate='visible'
-        // exit='hidden'
-        // // variants={{
-        // hidden: { opacity: 0, transition: { duration: 0.2 } },
-        // visible: { opacity: 1, transition: { duration: 0.2 } }
-        // }}
-      >
-        <div className={styles.navBar__left}>
-          <Image src={nfLogo} alt='' width={90} height={30} className={styles.logo} />
-          {listLeft.map((item, index) => (
-            <div key={index} className={styles.options}>
-              {item}
-            </div>
-          ))}
-        </div>
-        <div className={styles.navBar__right}>
-          <IoSearch className={styles.icon} />
-          <IoNotifications className={styles.icon} />
-          <div className={styles.profile}>
-            <img src='../assets/avatar.png' alt='user' className={styles.user} />
-            <BiCaretDown className={styles.smallIcon} />
-          </div>
-        </div>
-      </motion.div>
+
+   
+      <Navbar isScrolled={isScrolled} />
 
       <div className={styles.spotlight}>
         <img src={DUMMY_IMAGE} alt='spotlight' className={styles.spotlight__image} />
