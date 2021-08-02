@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { motion } from 'framer-motion';
 import router from 'next/router';
 import React, { useRef, useState } from 'react';
 import { BiCaretDown } from 'react-icons/bi';
@@ -19,11 +20,26 @@ export default function Profile(): React.ReactElement {
   const onClose = (): void => setVisible(false);
 
   const onSignout = (): Promise<boolean> => router.push(ROUTES.HOME);
-  
+
+  const caretAnimation = {
+    animate: visible ? 'up' : 'down',
+    variants: {
+      up: {
+        rotate: 180
+      },
+      down: {
+        rotate: 0
+      }
+    },
+    transition: { duration: 0.25 }
+  };
+
   return (
     <div className={styles.profile} onMouseOver={onHover}>
       <img src='../../assets/avatar.png' alt='user' className={styles.user} />
-      <BiCaretDown className={styles.smallIcon} />
+      <motion.div {...caretAnimation}>
+        <BiCaretDown />
+      </motion.div>
       <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
         <div onClick={onSignout}>Sign out</div>
       </Dialog>
