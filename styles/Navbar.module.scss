@@ -72,6 +72,30 @@
       }
     }
 
+    .searchPanel {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+    }
+    .searchBar {
+      background-color: $secondary;
+      border: $white-hover solid 1.2px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 0.9rem;
+
+      &__input {
+        padding: 0.4rem;
+        outline: none;
+        border-radius: 0;
+        background-color: transparent;
+      color: $white;
+      border: none;
+      }
+    }
+
     .profile {
       padding: 0 0.9rem;
       display: flex;
@@ -106,7 +130,7 @@
         cursor: pointer;
 
         &:hover {
-          border-color: $white
+          border-color: $white;
         }
       }
     }

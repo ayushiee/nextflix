@@ -10,6 +10,9 @@ import styles from '../../styles/Navbar.module.scss';
 import nfLogo from '../../public/assets/nfLogo.png';
 import Dialog from '../Dialog';
 import { ROUTES } from '../../utils/config';
+import SearchBar from './SearchBar';
+import { Maybe } from '../../utils/types';
+import useExternalClick from '../../hooks/useExternalClick';
 
 const listLeft = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
@@ -20,8 +23,22 @@ interface NavbarProps {
 export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement {
   const navBackground = isScrolled ? styles.navBar__filled : styles.navBar;
   const [visible, setVisible] = useState<boolean>(false);
-  const profileRef = useRef(null);
+  const profileRef = useRef<Maybe<HTMLDivElement>>(null);
+  const searchRef = useRef<Maybe<HTMLDivElement>>(null);
   const router: NextRouter = useRouter();
+  const [isSearch, setIsSearch] = useState<boolean>(false);
+  const [searchInput, setSearchInput] = useState<string>('');
+
+  const onSearchActive = (): void => {
+    setIsSearch(true);
+  };
+  useExternalClick(searchRef, () => {
+    setIsSearch(false);
+  });
+
+  const onSearchQuery = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(target.value);
+  };
 
   const onHover = (): void => {
     setVisible(true);
@@ -51,7 +68,33 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
       </div>
 
       <div className={styles.navBar__right}>
-        <IoSearch className={styles.icon} />
+        <div ref={searchRef} className={styles.searchPanel}>
+        <motion.div
+          className={styles.searchBar}
+          initial='hidden'
+          animate={isSearch ? 'visible' : 'hidden'}
+          transition={{ duration: 0.5 }}
+          variants={{
+            visible: {
+              opacity: 1,
+              width: 250
+            },
+            hidden: {
+              opacity: 0,
+              width: 0
+            }
+          }}>
+          <IoSearch className={styles.icon} />
+          <input
+            type='text'
+            className={styles.searchBar__input}
+            value={searchInput}
+            onChange={onSearchQuery}
+            placeholder='Titles, people, genres'
+          />
+        </motion.div>
+        {!isSearch && <IoSearch className={styles.icon} onMouseOver={onSearchActive} />}
+      </div>
         <IoNotifications className={styles.icon} />
 
         <div className={styles.profile} onMouseOver={onHover}>
