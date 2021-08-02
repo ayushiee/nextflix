@@ -14,6 +14,7 @@ const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
+  const arr = new Array(40).fill(undefined);
   
   return (
     <div className={styles.container}>
@@ -42,21 +43,7 @@ export default function Browse(): React.ReactElement {
 
       <div>
         <Cards />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
-        scroll <br />
+        {arr.map((_, index) => <div key={index}>scroll<br /></div>)}
       </div>
     </div>
   );

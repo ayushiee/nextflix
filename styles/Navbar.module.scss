@@ -103,20 +103,11 @@
       flex-direction: row;
       cursor: pointer;
 
-      .smallIcon {
-        transition: 200ms ease-in-out;
-      }
-
-      &:hover {
-        .smallIcon {
-          transform: rotate(180deg);
-        }
-      }
-
       .user {
         height: 2rem;
         border-radius: 0.2rem;
         margin-right: 0.3rem;
+        cursor: pointer;
       }
 
       .signout {
