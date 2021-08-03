@@ -32,14 +32,38 @@
     align-items: center;
     margin-left: 3rem;
 
+    .browse {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      cursor: pointer;
+    }
+
     .options {
-      padding: 0.3rem;
+      padding: 0.4rem 0.3rem;
       margin: 0 0 0 0.8rem;
       cursor: pointer;
       transition: linear 200ms ease-in;
 
       &:hover {
         color: $white-hover;
+      }
+    }
+
+    .menu {
+      background-color: $secondary;
+      opacity: 0.7 !important;
+      color: $white;
+      position: absolute;
+      top: 3rem;
+      padding: 0.6rem 0.9rem;
+      margin-left: 6rem;
+      border: $button-border solid 1.5px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $white;
       }
     }
   }
@@ -91,8 +115,8 @@
         outline: none;
         border-radius: 0;
         background-color: transparent;
-      color: $white;
-      border: none;
+        color: $white;
+        border: none;
       }
     }
 
@@ -111,7 +135,8 @@
       }
 
       .signout {
-        background-color: $card-color;
+        background-color: $secondary;
+        opacity: 0.7;
         color: $white;
         position: absolute;
         margin-top: 6rem;
