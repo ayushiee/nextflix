@@ -1,0 +1,67 @@
+@use "sass:math";
+
+//breakpoints
+$xs: 480px;
+$sm: 640px;
+$md: 768px;
+$lg: 1025px;
+$xl: 1280px;
+$xxl: 1536px;
+
+//Font-size
+$base-font-size: 16px;
+$default-min-font-size: 8px;
+$default-max-font-size: 32px;
+
+@mixin for-xxl-devices {
+  @media (max-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin for-xl-devices {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin for-large-devices {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin for-tablet-screens {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin for-mobile-only {
+  @media only screen and (max-width: $sm) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin fluid-type(
+  $min-font-size: $default-min-font-size,
+  $max-font-size: $default-max-font-size,
+  $lower-range: $xs,
+  $upper-range: $xxl
+) {
+  font-size: calc(
+    #{$min-font-size} + #{(
+        math.div($max-font-size, ($max-font-size * 0 + 1)) - math.div($min-font-size, ($min-font-size * 0 + 1))
+      )} * math.div((100vw - #{$lower-range}), #{(
+            math.div($upper-range, ($upper-range * 0 + 1)) - math.div($lower-range, ($lower-range * 0 + 1))
+          )})
+  );
+
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+
+  @media screen and (min-width: $upper-range) {
+    font-size: $max-font-size;
+  }
+} 
