@@ -31,7 +31,7 @@ export default function Browse(): React.ReactElement {
         <div className={styles.spotlight__details}>
           <div className={styles.title}>Project Name</div>
           <div className={styles.synopsis}>
-            After a global blackout erases humanity's memory of the Beatles, a struggling musician performs the group's
+            After a global blackout erases humanity&apos;s memory of the Beatles, a struggling musician performs the group&apos;s
             music and becomes a pop sensation.
           </div>
           <div className={styles.buttonRow}>
