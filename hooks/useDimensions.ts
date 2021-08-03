@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Breakpoint, BreakpointValues } from '../utils/config';
-import { Dimension, DimensionDetail, Maybe } from '../utils/types';
+import { isTablet, isDesktop } from 'react-device-detect';
 
-export default function useDimension() {
+import { Breakpoint, BreakpointValues } from '../utils/config';
+import { Dimension, DimensionDetail } from '../utils/types';
+
+
+export default function useDimensions(): DimensionDetail {
   const [dimension, setDimension] = useState<Dimension>({
     height: 0,
     width: 0
@@ -19,11 +22,11 @@ export default function useDimension() {
     return () => window.removeEventListener('resize', handleResize);
   }, [dimension]);
 
-  const breakpoint = getBreakpoint(dimension.width);
+  const breakpoint: Breakpoint = getBreakpoint(dimension.width);
 
-  const isMobile = breakpoint === Breakpoint.XS || breakpoint === Breakpoint.SM;
-  const isTablet = breakpoint === Breakpoint.MD || breakpoint === Breakpoint.LG;
-  const isDesktop = breakpoint === Breakpoint.XL || breakpoint === Breakpoint.XXL;
+  const isMobile: boolean = breakpoint === Breakpoint.XS || breakpoint === Breakpoint.SM;
+  const isTablet: boolean = breakpoint === Breakpoint.MD || breakpoint === Breakpoint.LG;
+  const isDesktop: boolean = breakpoint === Breakpoint.XL || breakpoint === Breakpoint.XXL;
 
   return {
     dimension,
@@ -35,7 +38,7 @@ export default function useDimension() {
 }
 
 function getBreakpoint(currentWidth: number): Breakpoint {
-  const width = currentWidth || getInitialBreakpointValues();
+  const width: number = currentWidth || getInitialBreakpointValues();
 
   if (width <= BreakpointValues.XS) {
     return Breakpoint.XS;
@@ -64,7 +67,6 @@ function getBreakpoint(currentWidth: number): Breakpoint {
 }
 
 function getInitialBreakpointValues(): number {
-  const { isTablet, isDesktop } = require('react-device-detect');
   if (isTablet) return BreakpointValues.MD;
   if (isDesktop) return BreakpointValues.XL;
 
