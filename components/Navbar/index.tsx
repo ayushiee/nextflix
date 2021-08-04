@@ -56,7 +56,7 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
             variants={{
               visible: {
                 opacity: 1,
-                width: isMobile ? 140 : 250
+                width: isMobile ? 130 : 250
               },
               hidden: {
                 opacity: 0,
