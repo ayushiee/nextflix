@@ -4,7 +4,7 @@
 $xs: 480px;
 $sm: 640px;
 $md: 768px;
-$lg: 1025px;
+$lg: 1024px;
 $xl: 1280px;
 $xxl: 1536px;
 
@@ -46,8 +46,8 @@ $default-max-font-size: 32px;
 @mixin fluid-type(
   $min-font-size: $default-min-font-size,
   $max-font-size: $default-max-font-size,
-  $lower-range: $xs,
-  $upper-range: $xxl
+  $lower-range: $md,
+  $upper-range: $lg
 ) {
   font-size: calc(
     #{$min-font-size} + #{(
