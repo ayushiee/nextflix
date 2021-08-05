@@ -1,4 +1,5 @@
-@import '../styles/variables.scss';
+@import './variables.scss';
+@import './_mixins.scss';
 
 .button {
   z-index: 10;
@@ -16,18 +17,27 @@
   outline: none;
   border: none;
 
+  @include for-mobile-only {
+    background-color: tomato;
+    padding: 0.5rem 1.2rem;
+  }
+
   &:hover {
     opacity: 0.8;
   }
 
   .label {
     font-weight: bold;
-    font-size: 1.1rem;
     margin-left: 0.8rem;
+
+    @include fluid-type(0.9rem, 1.1rem);
+    @include for-mobile-only {
+      margin-left: 0.6rem;
+    }
   }
 
   .icon {
-    font-size: 1.4rem;
+    @include fluid-type(1.1rem, 1.4rem);
   }
 }
 
@@ -46,7 +56,6 @@
   outline: none;
   border: none;
 
-  
   &:hover {
     opacity: 0.8;
   }
@@ -81,4 +90,3 @@
     border-color: $white;
   }
 }
-
