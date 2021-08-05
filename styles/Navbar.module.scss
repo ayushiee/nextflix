@@ -30,6 +30,10 @@
     position: sticky;
     padding: 0.8rem;
     top: 0;
+
+    @include for-mobile-only {
+      padding: 0.6rem 0rem;
+    }  
   }
 
   &__left {
