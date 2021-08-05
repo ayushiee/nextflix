@@ -148,6 +148,12 @@
         background-color: transparent;
         color: $white;
         border: none;
+
+        @include for-mobile-only {
+          width: 90%;
+          overflow: hidden;
+          padding: 0.3rem;
+        }
       }
     }
 
