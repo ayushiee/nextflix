@@ -6,15 +6,16 @@ import { BiInfoCircle } from 'react-icons/bi';
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import Button from '../components/Button';
-import Cards from '../components/Cards';
+import Cards from '../components/List/Cards';
 import Navbar from '../components/Navbar';
+import List from '../components/List';
 
 const SCROLL_LIMIT: number = 80;
 const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
-  const arr = new Array(40).fill(undefined);
+  const arr = new Array(40).fill({ name: 'a', time: '2:45' });
   
   return (
     <div className={styles.container}>
@@ -42,8 +43,7 @@ export default function Browse(): React.ReactElement {
       </div>
 
       <div>
-        <Cards />
-        {arr.map((_, index) => <div key={index}>scroll<br /></div>)}
+        <List arr={arr} defaultCard={false} title='Trending' />
       </div>
     </div>
   );
