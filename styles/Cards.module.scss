@@ -1,15 +1,14 @@
 @import './variables.scss';
 @import './mixins.scss';
 
-.cardContainer {
+.listContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
   text-transform: capitalize;
-  background-color: teal;
+  z-index: 65;
 
   .arrowHolder {
-    background-color: turquoise;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +17,6 @@
   }
 
   .category {
-    background-color: tomato;
     @include fluid-type(0.88rem, 1.6rem);
     margin-left: 3rem;
     padding: 0.5rem 0;
@@ -27,10 +25,9 @@
   .cardRow {
     display: flex;
     flex-direction: row;
-    background-color: thistle;
-    overflow: scroll;
+    overflow: auto;
     z-index: 40;
-
+    padding: 0.2rem 3rem 1rem;
     &::-webkit-scrollbar {
       display: none;
     }

@@ -1,6 +1,5 @@
 import styles from '../../styles/Cards.module.scss';
 import Cards from './Cards';
-import { IoChevronBackOutline, IoChevronForward } from 'react-icons/io5';
 
 interface ListProps {
   defaultCard?: boolean;
@@ -11,19 +10,12 @@ interface ListProps {
 export default function List({ defaultCard = true, arr, title }: ListProps): React.ReactElement {
   return (
     <>
-      <div className={styles.cardContainer}>
+      <div className={styles.listContainer}>
         <strong className={styles.category}>{title}</strong>
         <div className={styles.cardRow}>
-          <div className={styles.arrowHolder}>
-            <IoChevronBackOutline />
-          </div>
-          {arr.map((_, index) => (
-            <Cards key={index} defaultCard={defaultCard} />
-          ))}
-          <div className={styles.arrowHolder}>
-            <IoChevronForward />
-          </div>
-          
+          {arr.map((_, index) => {
+            return <Cards key={index} defaultCard={defaultCard} />;
+          })}
         </div>
       </div>
     </>
