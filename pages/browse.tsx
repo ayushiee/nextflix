@@ -42,9 +42,11 @@ export default function Browse(): React.ReactElement {
         </div>
       </div>
 
-      <div>
-        <List arr={arr} defaultCard={false} title='Trending' />
+      <div className={styles.contentContainer}>
+        <List arr={arr} defaultCard title='Popular on Nextflix' />
+        <List arr={arr} defaultCard title='Sci-Fi' />
       </div>
+      
     </div>
   );
 }
