@@ -1,13 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
-import { IoPlaySharp } from 'react-icons/io5';
-import { BiInfoCircle } from 'react-icons/bi';
 
 import { Play, Info } from '../utils/icons';
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import Button from '../components/Button';
-import Cards from '../components/List/Cards';
 import Navbar from '../components/Navbar';
 import List from '../components/List';
 
@@ -45,7 +42,7 @@ export default function Browse(): React.ReactElement {
 
       <div className={styles.contentContainer}>
         <List arr={arr} defaultCard title='Popular on Nextflix' />
-        <List arr={arr} defaultCard title='Sci-Fi' />
+        <List arr={arr} defaultCard={false} title='Sci-Fi' />
       </div>
       
     </div>
