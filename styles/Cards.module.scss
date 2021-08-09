@@ -4,50 +4,71 @@
 .listContainer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   text-transform: capitalize;
-  z-index: 65;
-
-  .arrowHolder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
-    z-index: 50;
-  }
+  margin-top: -9.5rem;
 
   .category {
     @include fluid-type(0.88rem, 1.6rem);
     margin-left: 3rem;
     padding: 0.5rem 0;
+    width: fit-content;
   }
 
   .cardRow {
     display: flex;
     flex-direction: row;
-    overflow: auto;
-    z-index: 40;
-    padding: 0.2rem 3rem 1rem;
+    padding: 3.2rem 6rem 12.5rem;
+    overflow-x: auto;
+    margin-top: -2rem;
+    margin-left: -3rem;
+
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+}
 
-    .card {
-      background-color: $card-color;
-      height: 9rem;
-      width: 16rem;
-      border-radius: 0.28rem;
-      padding: 0.2rem;
-      margin-right: 0.4rem;
-    }
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 14rem;
+  background-color: $card-color;
+  border-radius: 0.28rem;
+  margin-right: 0.3rem;
+  transition: all 300ms ease;
+  z-index: 1;
+  cursor: pointer;
 
-    .longCard {
-      background-color: $card-color;
-      height: 24rem;
-      width: 16rem;
-      border-radius: 0.28rem;
-      padding: 0.2rem;
-      margin-right: 0.4rem;
+  &:hover {
+    transform: scale(1.35);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+
+    .cardPoster {
+      height: 85%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
+    .cardInfo {
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75), 0 6px 6px rgba(0, 0, 0, 0.5);
+      display: inherit;
+    }
+  }
+
+  .cardPoster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.28rem;
+  }
+
+  .cardInfo {
+    min-height: 6rem;
+    background-color: $secondary;
+    border-bottom-left-radius: 0.28rem;
+    border-bottom-right-radius: 0.28rem;
+    display: none;
+    padding: 0.4rem;
   }
 }
