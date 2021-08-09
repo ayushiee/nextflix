@@ -2,8 +2,8 @@
 import { motion } from 'framer-motion';
 import router from 'next/router';
 import React, { useRef, useState } from 'react';
-import { BiCaretDown } from 'react-icons/bi';
 
+import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import { ROUTES } from '../../utils/config';
 import { Maybe } from '../../utils/types';
@@ -38,7 +38,7 @@ export default function Profile(): React.ReactElement {
     <div className={styles.profile} onMouseOver={onHover}>
       <img src='../../assets/avatar.png' alt='user' className={styles.user} />
       <motion.div {...caretAnimation}>
-        <BiCaretDown />
+        <CaretDown />
       </motion.div>
       <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
         <div onClick={onSignout}>Sign out</div>

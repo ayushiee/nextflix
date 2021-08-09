@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { IoPlaySharp } from 'react-icons/io5';
 import { BiInfoCircle } from 'react-icons/bi';
 
+import { Play, Info } from '../utils/icons';
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import Button from '../components/Button';
@@ -36,8 +37,8 @@ export default function Browse(): React.ReactElement {
             music and becomes a pop sensation.
           </div>
           <div className={styles.buttonRow}>
-            <Button label='Play' filled Icon={IoPlaySharp} />
-            <Button label='More Info' Icon={BiInfoCircle} />
+            <Button label='Play' filled Icon={Play} />
+            <Button label='More Info' Icon={Info} />
           </div>
         </div>
       </div>

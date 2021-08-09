@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
-import { IoSearch, IoNotifications } from 'react-icons/io5';
 
+import { Search, Notifications } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import { Maybe } from '../../utils/types';
 import useExternalClick from '../../hooks/useExternalClick';
@@ -63,7 +63,7 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
                 width: 0
               }
             }}>
-            <IoSearch className={styles.icon} />
+            <Search className={styles.icon} />
             <input
               type='text'
               className={styles.searchBar__input}
@@ -72,9 +72,9 @@ export default function Navbar({ isScrolled }: NavbarProps): React.ReactElement 
               placeholder='Titles, people, genres'
             />
           </motion.div>
-          {!isSearch && <IoSearch className={styles.icon} onMouseOver={onSearchActive} />}
+          {!isSearch && <Search className={styles.icon} onMouseOver={onSearchActive} />}
         </div>
-        {!isMobile && <IoNotifications className={styles.icon} />}
+        {!isMobile && <Notifications className={styles.icon} />}
         <Profile />
       </div>
     </motion.div>

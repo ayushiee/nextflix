@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BiCaretDown } from 'react-icons/bi';
 
+import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
 import nfLogo from '../../public/assets/nfLogo.png';
@@ -46,7 +46,7 @@ export default function Menu() {
               browse
             </div>
             <motion.div {...caretAnimation}>
-              <BiCaretDown />
+              <CaretDown />
             </motion.div>
           </div>
           <Dialog dialogRef={menuRef} onClose={onClose} classname={styles.menu} visible={isVisible}>
