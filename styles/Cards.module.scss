@@ -73,3 +73,49 @@
     padding: 0.4rem;
   }
 }
+
+.longCard {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 14rem;
+  height: 24rem;
+  background-color: $card-color;
+  border-radius: 0.28rem;
+  margin-right: 0.3rem;
+  transition: all 320ms ease-in-out;
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 4px 4px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    
+    .cardPoster {
+      mask-image: linear-gradient(to bottom, $secondary 70%, transparent 100%);
+    }
+    .more {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .cardPoster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.28rem;
+  }
+
+  .more {
+    border-bottom-left-radius: 0.28rem;
+    border-bottom-right-radius: 0.28rem;
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 0.4rem;
+    z-index: 8;
+  }
+}

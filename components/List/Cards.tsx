@@ -8,13 +8,19 @@ interface CardsProps {
 const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Cards({ defaultCard = true }: CardsProps): React.ReactElement {
-  const height = defaultCard ? '9rem' : '9rem';
+  const style = defaultCard ? styles.card : styles.longCard;
   return (
-    <>
-      <div className={styles.card} style={{ height: `${height}` }}>
+      <div className={style}>
         <img src={DUMMY_IMAGE} alt='img' className={styles.cardPoster} />
-        <div className={styles.cardInfo}>bottom</div>
+        {defaultCard ? (
+          <div className={styles.cardInfo}>bottom</div>
+        ) : (
+            <div className={styles.more}>
+              More
+              <strong>Title</strong>
+              <span>New</span>
+            </div>
+        )}
       </div>
-    </>
   );
 }
