@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
-  margin-top: -9.5rem;
+  margin-top: -9.8rem;
 
   .category {
     @include fluid-type(0.88rem, 1.6rem);
@@ -19,7 +19,7 @@
     flex-direction: row;
     padding: 3.2rem 6rem 12.5rem;
     overflow-x: auto;
-    margin-top: -2rem;
+    margin-top: -3rem;
     margin-left: -3rem;
 
     &::-webkit-scrollbar {
@@ -33,6 +33,7 @@
   flex-direction: column;
   flex-shrink: 0;
   width: 14rem;
+  height: 9rem;
   background-color: $card-color;
   border-radius: 0.28rem;
   margin-right: 0.3rem;
@@ -64,7 +65,7 @@
   }
 
   .cardInfo {
-    min-height: 6rem;
+    min-height: 5rem;
     background-color: $secondary;
     border-bottom-left-radius: 0.28rem;
     border-bottom-right-radius: 0.28rem;
