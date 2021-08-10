@@ -7,6 +7,10 @@
   text-transform: capitalize;
   margin-top: -9.8rem;
 
+  @include for-mobile-only {
+    margin-top: 0;
+  }
+
   .category {
     @include fluid-type(0.88rem, 1.6rem);
     margin-left: 3rem;
@@ -24,6 +28,10 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @include for-mobile-only {
+      padding: 3.2rem 6rem 2.2rem;
     }
   }
 }
