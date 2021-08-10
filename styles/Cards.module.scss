@@ -99,7 +99,7 @@
     transform: scale(1.15);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 4px 4px rgba(0, 0, 0, 0.5);
     z-index: 5;
-    
+
     .cardPoster {
       mask-image: linear-gradient(to bottom, $secondary 70%, transparent 100%);
     }
@@ -125,5 +125,40 @@
     bottom: 0;
     padding: 0.4rem;
     z-index: 8;
+
+    .actionRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+.textDetails {
+  padding: 0.2rem 0.3rem;
+
+  .greenText {
+    color: $greenText;
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 0.2rem;
+  }
+
+  .rating {
+    border: $button-border solid 1px;
+    font-size: 0.75rem;
+    padding: 0 0.2rem;
+    margin: 0 0.2rem;
+  }
+
+  .regularText {
+    font-size: 0.75rem;
+    font-weight: 400;
   }
 }
