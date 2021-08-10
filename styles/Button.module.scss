@@ -45,46 +45,44 @@
   z-index: 10;
   color: $black;
   text-shadow: none;
-  padding: 0.7rem;
+  padding: 0.5rem;
   border-radius: 100%;
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  height: min-content;
   justify-content: center;
   align-items: center;
-  margin: 0.4rem;
+  margin: 0.2rem;
   outline: none;
   border: none;
+  width: min-content;
 
   &:hover {
     opacity: 0.8;
   }
 
-  .label {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-left: 0.8rem;
-  }
-
   .icon {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
 .outlineRounded {
   z-index: 10;
   background-color: $buttonRound-color !important;
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-radius: 100%;
   cursor: pointer;
+  width: min-content;
+  height: min-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0.4rem;
+  margin: 0.2rem;
   outline: none;
   border: $button-border solid 2.2px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 
   &:hover {
     border-color: $white;
