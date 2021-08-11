@@ -50,7 +50,7 @@
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.35);
+    transform: scale(1.45);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
     z-index: 5;
 
@@ -61,7 +61,9 @@
     }
     .cardInfo {
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75), 0 6px 6px rgba(0, 0, 0, 0.5);
-      display: inherit;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
     }
   }
 
@@ -73,12 +75,13 @@
   }
 
   .cardInfo {
-    min-height: 5rem;
+    min-height: fit-content;
     background-color: $secondary;
     border-bottom-left-radius: 0.28rem;
     border-bottom-right-radius: 0.28rem;
     display: none;
     padding: 0.4rem;
+    font-size: inherit;
   }
 }
 
@@ -115,50 +118,47 @@
     object-fit: cover;
     border-radius: 0.28rem;
   }
+}
+.more {
+  border-bottom-left-radius: 0.28rem;
+  border-bottom-right-radius: 0.28rem;
+  display: none;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 0.4rem;
+  z-index: 8;
+}
+.actionRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  .more {
-    border-bottom-left-radius: 0.28rem;
-    border-bottom-right-radius: 0.28rem;
-    display: none;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding: 0.4rem;
-    z-index: 8;
-
-    .actionRow {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-  }
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .textDetails {
   padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
 
   .greenText {
     color: $greenText;
     font-weight: bold;
-    font-size: 0.75rem;
     padding: 0.2rem;
+    padding-left: 0;
   }
 
   .rating {
     border: $button-border solid 1px;
-    font-size: 0.75rem;
     padding: 0 0.2rem;
     margin: 0 0.2rem;
   }
 
   .regularText {
-    font-size: 0.75rem;
     font-weight: 400;
   }
 }
