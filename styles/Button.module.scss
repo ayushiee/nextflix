@@ -45,7 +45,7 @@
   z-index: 10;
   color: $black;
   text-shadow: none;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 100%;
   cursor: pointer;
   display: flex;
@@ -63,14 +63,14 @@
   }
 
   .icon {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 .outlineRounded {
   z-index: 10;
   background-color: $buttonRound-color !important;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 100%;
   cursor: pointer;
   width: min-content;
@@ -82,7 +82,7 @@
   margin: 0.2rem;
   outline: none;
   border: $button-border solid 2.2px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   &:hover {
     border-color: $white;
