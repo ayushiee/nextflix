@@ -44,56 +44,6 @@ export default function Cards({ defaultCard = true }: CardsProps): React.ReactEl
           </div>
         </div>
       </div>
-
-      {/* {defaultCard ? (
-        <div className={styles.cardInfo}>
-          <div className={styles.actionRow}>
-            <div className={styles.actionRow}>
-              <Button Icon={Play} rounded filled />
-              <Button Icon={Add} rounded />
-              <Button Icon={Like} rounded />
-              <Button Icon={Dislike} rounded />
-            </div>
-            <Button Icon={Down} rounded />
-          </div>
-          <div className={styles.textDetails}>
-            <strong>Title</strong>
-            <div className={styles.row}>
-              <span className={styles.greenText}>New</span>
-              <span className={styles.rating}>rating</span>
-              <span className={styles.regularText}>length </span>
-            </div>
-            <div className={styles.row}>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className={styles.more}>
-          <div className={styles.actionRow}>
-            <div className={styles.actionRow}>
-              <Button Icon={Play} rounded filled />
-              <Button Icon={Add} rounded />
-            </div>
-            <Button Icon={Down} rounded />
-          </div>
-          <div className={styles.textDetails}>
-            <strong>Title</strong>
-            <div className={styles.row}>
-              <span className={styles.greenText}>New</span>
-              <span className={styles.rating}>rating</span>
-              <span className={styles.regularText}>length </span>
-            </div>
-            <div className={styles.row}>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-            </div>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 }
