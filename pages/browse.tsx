@@ -14,6 +14,7 @@ const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
   const arr = new Array(15).fill({ name: 'a', time: '2:45' });
+  const arrTop = new Array(10).fill({ name: 'a', time: '2:45' });
   
   return (
     <div className={styles.container}>
@@ -41,10 +42,12 @@ export default function Browse(): React.ReactElement {
       </div>
 
       <div className={styles.contentContainer}>
-        <List arr={arr} defaultCard={false} title='Only on Nextflix' />
         <List arr={arr} title='Trending now' />
         <List arr={arr} title='Comedies' />
-      </div>
+        <List arr={arrTop} title='Top 10 in India Today' topList/>
+        <List arr={arr} defaultCard={false} title='Only on Nextflix' />
+        <List arr={arr} title='Sci-Fi' />
+        </div>
       
     </div>
   );
