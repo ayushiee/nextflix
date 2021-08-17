@@ -3,18 +3,18 @@ import styles from '../../styles/Cards.module.scss';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
 import Button from '../Button';
 
-interface TopCardsProps {
+interface FeatureCardProps {
   index: number;
 }
 
 const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
-export default function TopCards({ index }: TopCardsProps): React.ReactElement {
+export default function FeatureCard({ index }: FeatureCardProps): React.ReactElement {
   return (
     <div className={styles.container}>
       <div className={styles.rank}>{index}</div>
 
-      <div className={styles.topCard}>
+      <div className={styles.featureCard}>
         <img src={DUMMY_IMAGE} alt='img' className={styles.poster} />
 
         <div className={styles.info}>

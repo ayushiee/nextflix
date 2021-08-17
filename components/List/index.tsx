@@ -1,6 +1,6 @@
 import styles from '../../styles/Cards.module.scss';
 import Cards from './Cards';
-import TopCards from './TopCards';
+import FeatureCard from './FeatureCards';
 
 interface ListProps {
   defaultCard?: boolean;
@@ -16,7 +16,7 @@ export default function List({ defaultCard = true, arr, title, topList = false }
       <div className={styles.cardRow}>
         {arr.map((_, index) => {
           if (topList) {
-            return <TopCards key={index} index={index + 1} />;
+            return <FeatureCard key={index} index={index + 1} />;
           } else {
             return <Cards key={index} defaultCard={defaultCard} />;
           }
