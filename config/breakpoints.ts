@@ -1,10 +1,4 @@
-export enum ROUTES {
-  HOME = '/',
-  BROWSE = '/browse',
-  LATEST = '/latest'
-}
-
-export const BreakpointValues = {
+export const BreakpointValues: Record<Breakpoint, number> = {
   XS: 480,
   SM: 640,
   MD: 768,
