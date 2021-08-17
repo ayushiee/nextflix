@@ -1,4 +1,4 @@
-import { Breakpoint } from './config';
+import { Breakpoint } from '../config/breakpoints';
 
 export type Maybe<T> = T | null;
 

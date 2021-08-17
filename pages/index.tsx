@@ -4,7 +4,7 @@ import { NextRouter, useRouter } from 'next/router';
 
 import styles from '../styles/Login.module.scss';
 import LoginBg from '../public/assets/loginBg.jpg';
-import { ROUTES } from '../utils/config';
+import { ROUTES } from '../config/route';
 
 export default function Home(): React.ReactElement {
   const router: NextRouter = useRouter();

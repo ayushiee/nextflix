@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 
 import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
-import { ROUTES } from '../../utils/config';
+import { ROUTES } from '../../config/route';
 import { Maybe } from '../../utils/types';
 import Dialog from '../Dialog';
 

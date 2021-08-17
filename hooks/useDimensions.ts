@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { isTablet, isDesktop } from 'react-device-detect';
 
-import { Breakpoint, BreakpointValues } from '../utils/config';
+import { Breakpoint, BreakpointValues } from '../config/breakpoints';
 import { Dimension, DimensionDetail } from '../utils/types';
 
 
