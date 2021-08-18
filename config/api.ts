@@ -7,9 +7,9 @@ interface APIConfig {
   };
 }
 
-export const config: APIConfig {
+export const config: APIConfig = {
     api: {
         base: "https://api.themoviedb.org/3",
-        key: env.get('NEXT_APP_TMDB_API_KEY').required().asString(),
+        key: env.get('NEXT_APP_TMDB_KEY').required().asString(),
     },
 };
