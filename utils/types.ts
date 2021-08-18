@@ -14,3 +14,13 @@ export type DimensionDetail = {
   isTablet: boolean;
   isDesktop: boolean;
 };
+
+export type Genre = {
+  id: number;
+  name: string;
+};
+
+export enum MediaType {
+  MOVIE = 'movie',
+  TV = 'tv'
+}
