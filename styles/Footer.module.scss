@@ -1,0 +1,17 @@
+@import './_mixins';
+@import './_variables';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 1.5rem;
+
+    .icon {
+        font-size: 1.2rem;
+        margin: 0 0.4rem;
+       
+    }
+}
