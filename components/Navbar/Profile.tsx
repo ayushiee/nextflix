@@ -7,7 +7,7 @@ import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import { ROUTES } from '../../config/route';
 import { Maybe } from '../../utils/types';
-import Dialog from '../Dialog';
+import { Dialog } from '..';
 
 export default function Profile(): React.ReactElement {
   const [visible, setVisible] = useState<boolean>(false);

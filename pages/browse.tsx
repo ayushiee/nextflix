@@ -2,10 +2,7 @@
 
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
-import Navbar from '../components/Navbar';
-import List from '../components/List';
-import Footer from '../components/Footer';
-import Banner from '../components/Banner';
+import { Navbar, List, Footer, Banner } from '../components';
 
 const SCROLL_LIMIT: number = 80;
 
