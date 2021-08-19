@@ -1,15 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Play, Info } from '../utils/icons';
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
-import Button from '../components/Button';
 import Navbar from '../components/Navbar';
 import List from '../components/List';
 import Footer from '../components/Footer';
+import Banner from '../components/Banner';
 
 const SCROLL_LIMIT: number = 80;
-const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
@@ -18,31 +16,16 @@ export default function Browse(): React.ReactElement {
 
   return (
     <div className={styles.container}>
-    
       <Navbar isScrolled={isScrolled} />
-
-      <div className={styles.spotlight}>
-        <img src={DUMMY_IMAGE} alt='spotlight' className={styles.spotlight__image} />
-        <div className={styles.spotlight__details}>
-          <div className={styles.title}>Project Name</div>
-          <div className={styles.synopsis}>
-            After a global blackout erases humanity&apos;s memory of the Beatles, a struggling musician performs the group&apos;s
-            music and becomes a pop sensation.
-          </div>
-          <div className={styles.buttonRow}>
-            <Button label='Play' filled Icon={Play} />
-            <Button label='More Info' Icon={Info} />
-          </div>
-        </div>
-      </div>
+      <Banner />
 
       <div className={styles.contentContainer}>
         <List arr={arr} title='Trending now' />
         <List arr={arr} title='Comedies' />
-        <List arr={arrTop} title='Top 10 in India Today' topList/>
+        <List arr={arrTop} title='Top 10 in India Today' topList />
         <List arr={arr} defaultCard={false} title='Only on Nextflix' />
         <List arr={arr} title='Sci-Fi' />
-        </div>
+      </div>
       <Footer />
     </div>
   );
