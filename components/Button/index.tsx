@@ -1,6 +1,5 @@
-import styles from '../styles/Button.module.scss';
+import styles from '../../styles/Button.module.scss';
 import { IconType } from 'react-icons';
-import { useState } from 'react';
 
 interface ButtonProps {
   filled?: boolean;
