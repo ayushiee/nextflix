@@ -1,17 +1,19 @@
 import { NextApiResponse, NextApiRequest } from 'next';
-import { MediaType, Media } from '../../types';
+
 import { parse } from '../../utils/apiResolvers';
+import { MediaType, Media } from '../../types';
 import getInstance from '../../utils/axios';
 
 interface Response {
-  data: Media[];
+  type: 'Success' | 'Error';
+  data: Media[] | Error;
 }
 
 const apiKey = process.env.TMDB_KEY;
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<Response>) {
   const axios = getInstance();
-    const { type, genre } = request.query;
+  const { type, genre } = request.query;
 
   try {
     const result = await axios.get(`/discover/${type}`, {
@@ -23,10 +25,9 @@ export default async function handler(request: NextApiRequest, response: NextApi
     });
     const data = parse(result.data.results, type as MediaType);
 
-    response.status(200).json({ data });
+    response.status(200).json({ type: 'Success', data });
   } catch (error) {
-    console.log(error);
+    console.log(error.data);
+    response.status(500).json({ type: 'Error', data: error.data });
   }
 }
-
-

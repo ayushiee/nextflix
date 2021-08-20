@@ -26,7 +26,9 @@ export enum MediaType {
 }
 
 export type Media = {
+  id: number;
   title: string;
+  overview: string;
   poster: string;
   banner: string;
   rating: number;

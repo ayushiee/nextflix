@@ -6,8 +6,10 @@ export function parse(array: any[], type: MediaType): Media[] {
 
   array.forEach((element: any): void => {
     const resolved: Media = {
+      id: element.id,
       title: element.name || element.title,
       rating: element.vote_average,
+      overview: element.overview,
       poster: getImageUrl(element.poster_path, 'poster'),
       banner: getImageUrl(element.backdrop_path, 'original'),
       genre: getGenre(element.genre_ids, type)
