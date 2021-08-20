@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "env-var": "^7.0.1",
     "framer-motion": "^4.1.17",
     "next": "11.0.1",
