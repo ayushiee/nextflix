@@ -24,3 +24,14 @@ export enum MediaType {
   MOVIE = 'movie',
   TV = 'tv'
 }
+
+export type Media = {
+  title: string;
+  poster: string;
+  banner: string;
+  rating: number;
+  genre: Genre[];
+};
+
+export type ImageType = 'poster' | 'original';
+

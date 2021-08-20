@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { Search, Notifications } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
-import { Maybe } from '../../utils/types';
+import { Maybe } from '../../types';
 import useExternalClick from '../../hooks/useExternalClick';
 import Profile from './Profile';
 import useDimensions from '../../hooks/useDimensions';

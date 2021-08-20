@@ -6,7 +6,7 @@ import React, { useRef, useState } from 'react';
 import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import { ROUTES } from '../../config/route';
-import { Maybe } from '../../utils/types';
+import { Maybe } from '../../types';
 import { Dialog } from '..';
 
 export default function Profile(): React.ReactElement {

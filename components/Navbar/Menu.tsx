@@ -6,7 +6,7 @@ import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
 import nfLogo from '../../public/assets/nfLogo.png';
 import { useRef, useState } from 'react';
-import { Maybe } from '../../utils/types';
+import { Maybe } from '../../types';
 import { Dialog } from '..';
 
 const browseList = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];

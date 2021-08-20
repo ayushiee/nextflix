@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { isTablet, isDesktop } from 'react-device-detect';
 
 import { Breakpoint, BreakpointValues } from '../config/breakpoints';
-import { Dimension, DimensionDetail } from '../utils/types';
+import { Dimension, DimensionDetail } from '../types/types';
 
 
 export default function useDimensions(): DimensionDetail {
