@@ -27,5 +27,9 @@ function getImageUrl(path: string, type: ImageType): string {
 }
 
 function getGenre(genreIds: number[], type: MediaType) {
-  return genres[type].filter(item => genreIds.includes(item.id));
+  const result = genres[type].filter(item => genreIds.includes(item.id));
+  if (result.length > 3) {
+    return result.slice(0,3);
+  }
+  return result;
 }
