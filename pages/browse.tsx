@@ -3,13 +3,12 @@
 import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
 import { Navbar, List, Footer, Banner } from '../components';
+import { Section } from '../types';
 
 const SCROLL_LIMIT: number = 80;
 
 export default function Browse(): React.ReactElement {
   const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
-  const arr = new Array(15).fill({ name: 'a', time: '2:45' });
-  const arrTop = new Array(10).fill({ name: 'a', time: '2:45' });
 
   return (
     <div className={styles.container}>
@@ -17,13 +16,67 @@ export default function Browse(): React.ReactElement {
       <Banner />
 
       <div className={styles.contentContainer}>
-        <List arr={arr} title='Trending now' />
-        <List arr={arr} title='Comedies' />
-        <List arr={arrTop} title='Top 10 in India Today' topList />
-        <List arr={arr} defaultCard={false} title='Only on Nextflix' />
-        <List arr={arr} title='Sci-Fi' />
+        {sections.map((item, index) => {
+          return <List
+            key={index}
+            heading={item.heading}
+            endpoint={item.endpoint}
+            defaultCard={item?.defaultCard}
+            topList={item?.topList}
+          />;
+        })}
       </div>
       <Footer />
     </div>
   );
 }
+
+const sections: Section[] = [
+  {
+    heading: 'Popular on Nextflix',
+    endpoint: '/api/popular?type=tv'
+  },
+  {
+    heading: 'Horror Movies',
+    endpoint: '/api/discover?type=movie&genre=27'
+  },
+  {
+    heading: 'Trending Now',
+    endpoint: '/api/trending?type=movie&time=week'
+  },
+  {
+    heading: 'Only on Nextflix',
+    endpoint: '/api/discover?type=tv',
+
+    defaultCard: false
+  },
+  {
+    heading: 'Comedies',
+    endpoint: '/api/discover?type=movie&genre=35'
+  },
+  {
+    heading: 'Action',
+    endpoint: '/api/discover?type=movie&genre=28'
+  },
+  {
+    heading: 'TV Sci-Fi and Horror',
+    endpoint: '/api/discover?type=tv&genre=10765'
+  },
+  {
+    heading: 'Top 10 in US Today',
+    endpoint: '/api/trending?type=tv&time=day',
+    topList: true
+  },
+  {
+    heading: 'Mystery Movies',
+    endpoint: '/api/discover?type=movie&genre=9648'
+  },
+  {
+    heading: 'Animation',
+    endpoint: '/api/discover?type=tv&genre=16'
+  },
+  {
+    heading: 'Drama',
+    endpoint: '/api/discover?type=movie&genre=18'
+  }
+];

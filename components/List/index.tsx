@@ -1,24 +1,45 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import styles from '../../styles/Cards.module.scss';
+import { Media } from '../../types';
 import Cards from './Cards';
 import FeatureCard from './FeatureCards';
 
 interface ListProps {
   defaultCard?: boolean;
-  arr: Array<object>;
-  title: string;
+  heading: string;
   topList?: boolean;
+  endpoint: string;
 }
 
-export default function List({ defaultCard = true, arr, title, topList = false }: ListProps): React.ReactElement {
+export default function List({
+  defaultCard = true,
+  heading,
+  topList = false,
+  endpoint
+}: ListProps): React.ReactElement {
+  const [media, setMedia] = useState<Media[]>([]);
+
+  async function getEndpoint() {
+    try {
+      const result = await axios.get(endpoint);
+      setMedia(result.data.data);
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    getEndpoint();
+  }, []);
+
   return (
     <div className={styles.listContainer}>
-      <strong className={styles.category}>{title}</strong>
+      <strong className={styles.category}>{heading}</strong>
       <div className={styles.cardRow}>
-        {arr.map((_, index) => {
+        {media?.map((item, index) => {
           if (topList) {
-            return <FeatureCard key={index} index={index + 1} />;
+            return <FeatureCard key={index} index={index + 1} item={item} />;
           } else {
-            return <Cards key={index} defaultCard={defaultCard} />;
+            return <Cards key={index} defaultCard={defaultCard} item={item} />;
           }
         })}
       </div>
