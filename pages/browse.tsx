@@ -41,14 +41,13 @@ const sections: Section[] = [
     endpoint: '/api/discover?type=movie&genre=27'
   },
   {
-    heading: 'Trending Now',
-    endpoint: '/api/trending?type=movie&time=week'
-  },
-  {
     heading: 'Only on Nextflix',
     endpoint: '/api/discover?type=tv',
-
     defaultCard: false
+  },
+  {
+    heading: 'Trending Now',
+    endpoint: '/api/trending?type=movie&time=week'
   },
   {
     heading: 'Comedies',

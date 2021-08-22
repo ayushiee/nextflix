@@ -82,7 +82,7 @@ export const genres: Record<MediaType, Genre[]> = {
   [MediaType.TV]: [
     {
       id: 10759,
-      name: 'Action & Adventure'
+      name: 'Adventure'
     },
     {
       id: 16,
