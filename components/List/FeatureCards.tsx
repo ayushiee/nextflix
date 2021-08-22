@@ -1,21 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
+import { useEffect, useState } from 'react';
 import styles from '../../styles/Cards.module.scss';
+import { Genre, Media } from '../../types';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
 import Button from '../Button';
 
 interface FeatureCardProps {
   index: number;
+  item: Media;
 }
 
-const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
+export default function FeatureCard({ index, item }: FeatureCardProps): React.ReactElement {
+  const { title, poster, banner, rating, genre } = item;
+  const [image, setImage] = useState<string>(poster);
 
-export default function FeatureCard({ index }: FeatureCardProps): React.ReactElement {
+  const onHover = () => {
+    setImage(banner);
+  };
+
+  const onMouseOut = () => {
+    setImage(poster);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.rank}>{index}</div>
 
       <div className={styles.featureCard}>
-        <img src={DUMMY_IMAGE} alt='img' className={styles.poster} />
+        <img src={image} alt='img' className={styles.poster} onMouseOver={onHover} onMouseOut={onMouseOut} />
 
         <div className={styles.info}>
           <div className={styles.actionRow}>
@@ -28,20 +40,31 @@ export default function FeatureCard({ index }: FeatureCardProps): React.ReactEle
             <Button Icon={Down} rounded />
           </div>
           <div className={styles.textDetails}>
-            <strong>Title</strong>
+            <strong>{title}</strong>
             <div className={styles.row}>
-              <span className={styles.greenText}>New</span>
-              <span className={styles.rating}>rating</span>
-              <span className={styles.regularText}>length </span>
+              <span className={styles.greenText}>{rating * 10}% Match</span>
+              {/* <span className={styles.regularText}>length </span> */}
             </div>
-            <div className={styles.row}>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-              <span className={styles.regularText}>length </span>
-            </div>
+            {renderGenre(genre)}
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function renderGenre(genre: Genre[]) {
+  return (
+    <div className={styles.row}>
+      {genre.map((item, index) => {
+        const isLast = index === genre.length - 1;
+        return (
+          <div key={index} className={styles.row}>
+            <span className={styles.regularText}>{item.name}</span>
+            {!isLast && <div className={styles.dot}>&bull;</div>}
+          </div>
+        );
+      })}
     </div>
   );
 }
