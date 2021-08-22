@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import axios from '../../utils/axios';
 import { Media, MediaType } from '../../types';
 import { parse } from '../../utils/apiResolvers';
@@ -17,7 +18,8 @@ export default async function handler(request: NextApiRequest, response: NextApi
     const result = await axios().get(`/${type}/popular`, {
       params: {
         api_key: apiKey,
-        watch_region: 'US'
+        watch_region: 'US', 
+        language: 'en-US',
       }
     });
     const data = parse(result.data.results, type as MediaType);

@@ -19,8 +19,9 @@ export default async function handler(request: NextApiRequest, response: NextApi
     const result = await axios.get(`/discover/${type}`, {
       params: {
         api_key: apiKey,
-        with_genre: genre,
-        watch_region: 'US'
+        with_genres: genre,
+        watch_region: 'US',
+        with_networks:'213',
       }
     });
     const data = parse(result.data.results, type as MediaType);

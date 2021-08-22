@@ -11,10 +11,10 @@ interface Response {
 const apiKey = process.env.TMDB_KEY;
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<Response>) {
-  const { type } = request.query;
+  const { type, time } = request.query;
 
   try {
-    const result = await axios().get(`/trending/${type}/day`, {
+    const result = await axios().get(`/trending/${type}/${time}`, {
       params: {
         api_key: apiKey,
         watch_region: 'US'
