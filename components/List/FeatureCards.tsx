@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from '../../styles/Cards.module.scss';
 import { Genre, Media } from '../../types';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
