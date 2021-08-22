@@ -37,3 +37,9 @@ export type Media = {
 
 export type ImageType = 'poster' | 'original';
 
+export type Section = {
+  heading: string;
+  endpoint: string;
+  defaultCard?: boolean;
+  topList?: boolean;
+};
