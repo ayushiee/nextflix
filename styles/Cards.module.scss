@@ -85,6 +85,17 @@
   }
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dot {
+  color: $button-border;
+  padding: 0 0.3rem;
+}
+
 .longCard {
   display: flex;
   flex-direction: column;
