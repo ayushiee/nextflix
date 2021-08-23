@@ -37,7 +37,9 @@ export default function List({
       <div className={styles.cardRow}>
         {media?.map((item, index) => {
           if (topList) {
-            return <FeatureCard key={index} index={index + 1} item={item} />;
+            if (index < 10) {
+              return <FeatureCard key={index} index={index + 1} item={item} />;
+            }
           } else {
             return <Cards key={index} defaultCard={defaultCard} item={item} />;
           }
