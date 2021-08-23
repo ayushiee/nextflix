@@ -1,20 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import styles from '../../styles/Browse.module.scss';
 import { Play, Info } from '../../utils/icons';
 import Button from '../Button';
+import { Media } from '../../types';
 
-const DUMMY_IMAGE: string = 'https://source.unsplash.com/random';
+
 
 export default function Banner() {
+  const [media, setMedia] = useState<Media>();
+  const random = Math.floor(Math.random() * 20);
+
+  const getMedia = async () => {
+    try {
+      const result = await axios.get('/api/popular?type=movie');
+      setMedia(result.data.data[random]);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    getMedia();
+  }, []);
+
   return (
     <div className={styles.spotlight}>
-      <img src={DUMMY_IMAGE} alt='spotlight' className={styles.spotlight__image} />
+      <img src={media?.banner} alt='spotlight' className={styles.spotlight__image} />
       <div className={styles.spotlight__details}>
-        <div className={styles.title}>Project Name</div>
-        <div className={styles.synopsis}>
-          After a global blackout erases humanity&apos;s memory of the Beatles, a struggling musician performs the
-          group&apos;s music and becomes a pop sensation.
-        </div>
+        <div className={styles.title}>{media?.title}</div>
+        <div className={styles.synopsis}>{media?.overview}</div>
         <div className={styles.buttonRow}>
           <Button label='Play' filled Icon={Play} />
           <Button label='More Info' Icon={Info} />
