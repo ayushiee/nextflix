@@ -1,33 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 
-import useScrollLimit from '../hooks/useScrollLimit';
 import styles from '../styles/Browse.module.scss';
-import { Navbar, List, Footer, Banner } from '../components';
+import { List, Banner, Layout } from '../components';
 import { Section } from '../types';
 
-const SCROLL_LIMIT: number = 80;
 
 export default function Browse(): React.ReactElement {
-  const isScrolled: boolean = useScrollLimit(SCROLL_LIMIT);
 
   return (
-    <div className={styles.container}>
-      <Navbar isScrolled={isScrolled} />
+    <Layout>
       <Banner />
-
       <div className={styles.contentContainer}>
         {sections.map((item, index) => {
-          return <List
-            key={index}
-            heading={item.heading}
-            endpoint={item.endpoint}
-            defaultCard={item?.defaultCard}
-            topList={item?.topList}
-          />;
+          return (
+            <List
+              key={index}
+              heading={item.heading}
+              endpoint={item.endpoint}
+              defaultCard={item?.defaultCard}
+              topList={item?.topList}
+            />
+          );
         })}
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 
@@ -54,17 +50,17 @@ const sections: Section[] = [
     endpoint: '/api/discover?type=movie&genre=35'
   },
   {
+    heading: 'Top 10 in US Today',
+    endpoint: '/api/trending?type=tv&time=day',
+    topList: true
+  },
+  {
     heading: 'Action',
     endpoint: '/api/discover?type=movie&genre=28'
   },
   {
     heading: 'TV Sci-Fi and Horror',
     endpoint: '/api/discover?type=tv&genre=10765'
-  },
-  {
-    heading: 'Top 10 in US Today',
-    endpoint: '/api/trending?type=tv&time=day',
-    topList: true
   },
   {
     heading: 'Mystery Movies',
