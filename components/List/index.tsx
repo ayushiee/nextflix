@@ -1,9 +1,12 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-import styles from '../../styles/Cards.module.scss';
+import dynamic from 'next/dynamic';
+import axios from 'axios';
+
 import { Media } from '../../types';
-import Cards from './Cards';
-import FeatureCard from './FeatureCards';
+import styles from '../../styles/Cards.module.scss';
+
+const Cards = dynamic(import('./Cards'));
+const FeatureCard = dynamic(import('./FeatureCards'));
 
 interface ListProps {
   defaultCard?: boolean;

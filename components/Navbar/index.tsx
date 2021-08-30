@@ -1,14 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 
+import useExternalClick from '../../hooks/useExternalClick';
 import { Search, Notifications } from '../../utils/icons';
+import useDimensions from '../../hooks/useDimensions';
 import styles from '../../styles/Navbar.module.scss';
 import { Maybe } from '../../types';
-import useExternalClick from '../../hooks/useExternalClick';
-import Profile from './Profile';
-import useDimensions from '../../hooks/useDimensions';
-import Menu from './Menu';
+
+const Profile = dynamic(import('./Profile'))
+const Menu = dynamic(import('./Menu'))
 
 interface NavbarProps {
   isScrolled: boolean;

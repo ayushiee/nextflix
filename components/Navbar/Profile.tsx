@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { motion } from 'framer-motion';
-import router from 'next/router';
 import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import router from 'next/router';
 
+import { Maybe } from '../../types';
+import { ROUTES } from '../../config/route';
 import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
-import { ROUTES } from '../../config/route';
-import { Maybe } from '../../types';
-import { Dialog } from '..';
+
+const Dialog = dynamic(import('../Dialog'))
 
 export default function Profile(): React.ReactElement {
   const [visible, setVisible] = useState<boolean>(false);

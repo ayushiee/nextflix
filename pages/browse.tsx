@@ -1,8 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import dynamic from 'next/dynamic';
 
 import styles from '../styles/Browse.module.scss';
-import { List, Banner, Layout } from '../components';
 import { Section } from '../types';
+
+const Banner = dynamic(import ('../components/Banner'));
+const List = dynamic(import('../components/List'));
+const Layout = dynamic(import('../components/Layout'))
 
 
 export default function Browse(): React.ReactElement {

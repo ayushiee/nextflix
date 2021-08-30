@@ -1,8 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 
-import { Footer, Navbar } from '..';
 import useScrollLimit from '../../hooks/useScrollLimit';
 import styles from '../../styles/Browse.module.scss';
+
+const Footer = dynamic(import('../Footer'));
+const Navbar = dynamic(import('../Navbar'));
 
 interface Layout {
   children: React.ReactNode;

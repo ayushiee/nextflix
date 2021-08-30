@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from '../../styles/Cards.module.scss';
+import dynamic from 'next/dynamic';
+
 import { Genre, Media } from '../../types';
+import styles from '../../styles/Cards.module.scss';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
-import Button from '../Button';
+
+const Button = dynamic(import('../Button'));
 
 interface CardsProps {
   defaultCard?: boolean;

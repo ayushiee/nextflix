@@ -1,13 +1,15 @@
+import { useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+import { Maybe } from '../../types';
 import { CaretDown } from '../../utils/icons';
+import nfLogo from '../../public/assets/nfLogo.png';
 import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
-import nfLogo from '../../public/assets/nfLogo.png';
-import { useRef, useState } from 'react';
-import { Maybe } from '../../types';
-import { Dialog } from '..';
+
+const Dialog = dynamic(import('../Dialog'))
 
 const browseList = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
 
