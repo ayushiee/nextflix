@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import styles from '../../styles/Browse.module.scss';
+import styles from '../../styles/Banner.module.scss';
 import { Play, Info } from '../../utils/icons';
 import Button from '../Button';
 import { Media } from '../../types';

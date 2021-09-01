@@ -1,0 +1,77 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.spotlight {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 85vh;
+
+  @include for-mobile-only {
+    height: 64vh;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 92%;
+    z-index: 0;
+    object-fit: fill;
+    mask-image: linear-gradient(to bottom, $secondary 36%, transparent 100%);
+
+    @include for-mobile-only {
+      height: 68vh;
+    }
+  }
+
+  &__details {
+    z-index: 10;
+    width: 35%;
+    margin-left: 3.5rem;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+
+    @include for-mobile-only {
+      width: 75%;
+      justify-content: center;
+      text-align: center;
+      align-self: flex-end;
+      margin-bottom: 0.7rem;
+      margin-left: 2.9rem;
+    }
+
+    .title {
+      font-weight: 600;
+      padding: 0.4rem;
+
+      @include fluid-type(2.2rem, 2.8rem);
+    }
+
+    .synopsis {
+      font-weight: 400;
+      padding: 0.3rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      @include fluid-type(0.9rem, 1.3rem);
+    }
+
+    .buttonRow {
+      display: flex;
+      flex-direction: row;
+      margin: 0.3rem 0;
+
+      @include for-mobile-only {
+        justify-content: center;
+      }
+    }
+  }
+}
