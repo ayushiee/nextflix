@@ -4,10 +4,9 @@ import dynamic from 'next/dynamic';
 import styles from '../styles/Browse.module.scss';
 import { Section } from '../types';
 
-const Banner = dynamic(import ('../components/Banner'));
 const List = dynamic(import('../components/List'));
-const Layout = dynamic(import('../components/Layout'))
-
+const Layout = dynamic(import('../components/Layout'));
+const Banner = dynamic(import('../components/Banner'));
 
 export default function Browse(): React.ReactElement {
 

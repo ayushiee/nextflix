@@ -17,6 +17,7 @@ export default function SearchBar(): React.ReactElement {
   const onSearchActive = (): void => {
     setIsSearch(true);
   };
+  
   useExternalClick(searchRef, () => {
     setIsSearch(false);
   });
