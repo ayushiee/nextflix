@@ -85,6 +85,13 @@
   }
 }
 
+.modalButton {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+}
+
 .dot {
   color: $button-border;
   padding: 0 0.3rem;
@@ -184,7 +191,7 @@
     font-size: 13rem;
     font-weight: 900;
     -webkit-text-stroke: 5px #7c7c7c;
-    -webkit-text-fill-color: $black; 
+    -webkit-text-fill-color: $black;
     margin-right: -2rem;
     margin-bottom: 1.4rem;
     padding: 0 !important;
