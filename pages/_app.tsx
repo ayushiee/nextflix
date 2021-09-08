@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import { ModalProvider } from '../context/ModalContext';
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -11,8 +12,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta name='description' content='Netflix clone, made using Next.js' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <Component {...pageProps} />
+      <ModalProvider>
+        <Component {...pageProps} />
+      </ModalProvider>
     </>
   );
 }
