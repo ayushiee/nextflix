@@ -12,10 +12,11 @@ const Layout = dynamic(import('../components/Layout'));
 const Banner = dynamic(import('../components/Banner'));
 
 export default function Browse(): React.ReactElement {
-  const {isModal, data} = useContext(ModalContext);
-
+  const { isModal } = useContext(ModalContext);
+  console.log(isModal);
   return (
     <>
+      {isModal && <Modal />}
       <Layout>
         <Banner />
         <div className={styles.contentContainer}>
@@ -32,7 +33,6 @@ export default function Browse(): React.ReactElement {
           })}
         </div>
       </Layout>
-      {isModal && <Modal data={data} />}
     </>
   );
 }

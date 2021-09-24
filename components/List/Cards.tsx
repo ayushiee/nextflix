@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { Genre, Maybe, Media } from '../../types';
 import styles from '../../styles/Cards.module.scss';
 import { ModalContext } from '../../context/ModalContext';
-import useExternalClick from '../../hooks/useExternalClick';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
 
 const Button = dynamic(import('../Button'));
@@ -28,8 +27,6 @@ export default function Cards({ defaultCard = true, item}: CardsProps): React.Re
     setModalData(data);
     setIsModal(true);
   };
-
-  useExternalClick(modalRef, () => setIsModal(false));
 
   return (
       <div className={style}>

@@ -5,7 +5,6 @@ import { useContext, useRef, useState } from 'react';
 import styles from '../../styles/Cards.module.scss';
 import { Genre, Media, Maybe } from '../../types';
 import { ModalContext } from '../../context/ModalContext';
-import useExternalClick from '../../hooks/useExternalClick';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
 
 const Button = dynamic(import('../Button'));
@@ -27,7 +26,6 @@ export default function FeatureCard({ index, item }: FeatureCardProps): React.Re
     setIsModal(true);
   };
 
-  useExternalClick(modalRef, () => setIsModal(false));
   const onHover = () => {
     setImage(banner);
   };
