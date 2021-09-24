@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
-  margin-top: -9.8rem;
+  margin-top: -9rem;
 
   @include for-mobile-only {
     margin-top: 0;
