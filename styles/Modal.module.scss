@@ -1,4 +1,55 @@
+@import './_mixins.scss';
+@import './_variables.scss';
+
+.container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 550;
+}
+
 .modal {
-    z-index: 20;
-    background-color: pink;
+  background-color: #ffffff;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  z-index: 600;
+  min-width: 70%;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+}
+
+.cross {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .modal {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .modal {
+    max-width: 90%;
+  }
 }
