@@ -13,7 +13,6 @@ const Banner = dynamic(import('../components/Banner'));
 
 export default function Browse(): React.ReactElement {
   const { isModal } = useContext(ModalContext);
-  console.log(isModal);
   return (
     <>
       {isModal && <Modal />}
