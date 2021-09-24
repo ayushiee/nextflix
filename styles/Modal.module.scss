@@ -23,23 +23,95 @@
 }
 
 .modal {
-  background-color: #ffffff;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  background-color: $secondary;
+  color: $white;
   z-index: 600;
-  min-width: 70%;
+  min-width: 55%;
+  max-width: 60%;
   position: absolute;
   align-self: center;
   justify-self: center;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 .cross {
   position: absolute;
   top: 5%;
-  right: 5%;
+  right: 2%;
   cursor: pointer;
+  background-color: $navBar-transparent;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+}
+
+.overview {
+    margin-top: -12rem;
+    margin-left: 3.5rem;
+    @include fluid-type(0.7rem, 1.1rem);
+    max-width: 50%;
+    margin-bottom: 2rem;
+}
+
+.spotlight {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 75vh;
+  background-color: hotpink;
+
+  @include for-mobile-only {
+    height: 64vh;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 0;
+    object-fit: fill;
+    mask-image: linear-gradient(to bottom, $secondary 36%, transparent 100%);
+
+    @include for-mobile-only {
+      height: 68vh;
+    }
+  }
+
+  .details {
+    z-index: 10;
+    width: 65%;
+    margin-left: 3rem;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+
+    @include for-mobile-only {
+      width: 75%;
+      justify-content: center;
+      text-align: center;
+      align-self: flex-end;
+      margin-bottom: 0.7rem;
+      margin-left: 2.9rem;
+    }
+
+    .title {
+      font-weight: 600;
+      padding: 0.4rem;
+
+      @include fluid-type(2rem, 2.5rem);
+    }
+  }
+
+  .buttonRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

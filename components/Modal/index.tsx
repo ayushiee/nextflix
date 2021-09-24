@@ -1,18 +1,36 @@
+/* eslint-disable @next/next/no-img-element */
+import React, { useContext } from 'react';
 import styles from '../../styles/Modal.module.scss';
-import { Media } from '../../types';
+import { ModalContext } from '../../context/ModalContext';
+import { Play, Add, Like, Dislike } from '../../utils/icons';
+import Button from '../Button';
 
-interface ModalProps {
-  data: Media,
-}
-
-export default function Modal(props: ModalProps) {
-  const { data } = props;
+export default function Modal() {
+  const { modalData, setIsModal, isModal } = useContext(ModalContext);
+  const { title, banner, rating, overview, genre } = modalData;
 
   return (
-    <div className={styles.modal}>
-      {/* <div>hello</div> */}
-      hi {data.title}
-      {console.log('modal!', data.title)}
+    <div className={styles.container} style={{ display: isModal ? 'flex' : 'none' }}>
+      <div className={styles.overlay} onClick={() => setIsModal(false)}></div>
+      <div className={styles.modal}>
+        <div className={styles.spotlight}>
+          <img src={banner} alt='spotlight' className={styles.spotlight__image} />
+          <div className={styles.details}>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.buttonRow}>
+              <Button label='Play' filled Icon={Play} />
+              <Button Icon={Add} rounded />
+              <Button Icon={Like} rounded />
+              <Button Icon={Dislike} rounded />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.cross} onClick={() => setIsModal(false)}>
+          &#10005;
+        </div>
+        <div className={styles.overview}>{overview}</div>
+      </div>
     </div>
   );
 }
