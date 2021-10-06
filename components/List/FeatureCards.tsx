@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import dynamic from 'next/dynamic';
-import { useContext, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import styles from '../../styles/Cards.module.scss';
-import { Genre, Media, Maybe } from '../../types';
+import { Genre, Media } from '../../types';
 import { ModalContext } from '../../context/ModalContext';
 import { Add, Play, Down, Like, Dislike } from '../../utils/icons';
 
@@ -15,7 +15,6 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ index, item }: FeatureCardProps): React.ReactElement {
-  const modalRef = useRef<Maybe<HTMLDivElement>>(null);
   const { title, poster, banner, rating, genre } = item;
   const [image, setImage] = useState<string>(poster);
 
@@ -49,10 +48,8 @@ export default function FeatureCard({ index, item }: FeatureCardProps): React.Re
               <Button Icon={Like} rounded />
               <Button Icon={Dislike} rounded />
             </div>
-            <div ref={modalRef} className='modalButton' onClick={() => onClick(item)}>
-              <Button Icon={Down} rounded />
-            </div>
-                   </div>
+             <Button Icon={Down} rounded onClick={() => onClick(item)} />
+          </div>
           <div className={styles.textDetails}>
             <strong>{title}</strong>
             <div className={styles.row}>

@@ -1,17 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 
-import styles from '../../styles/Banner.module.scss';
-import { Play, Info } from '../../utils/icons';
 import Button from '../Button';
 import { Media } from '../../types';
+import { Play, Info } from '../../utils/icons';
+import { ModalContext } from '../../context/ModalContext';
+import styles from '../../styles/Banner.module.scss';
 
 
 
 export default function Banner() {
   const [media, setMedia] = useState<Media>();
   const random = Math.floor(Math.random() * 20);
+  const { setModalData, setIsModal } = useContext(ModalContext);
+
+  const onClick = (data: Media) => {
+    setModalData(data);
+    setIsModal(true);
+  };
 
   const getMedia = async () => {
     try {
@@ -32,7 +39,7 @@ export default function Banner() {
         <div className={styles.synopsis}>{media?.overview}</div>
         <div className={styles.buttonRow}>
           <Button label='Play' filled Icon={Play} />
-          <Button label='More Info' Icon={Info} />
+          {media && <Button label='More Info' Icon={Info} onClick={() => onClick(media)} />}
         </div>
       </div>
     </div>
