@@ -12,6 +12,7 @@
   top: 0;
   left: 0;
 }
+
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -31,13 +32,13 @@
   position: absolute;
   align-self: center;
   justify-self: center;
-  border-radius: 0.4rem;
+  border-radius: 0.7rem;
   overflow: hidden;
 }
 
 .cross {
   position: absolute;
-  top: 5%;
+  top: 3%;
   right: 2%;
   cursor: pointer;
   background-color: $navBar-transparent;
@@ -45,20 +46,47 @@
   border-radius: 50%;
 }
 
-.overview {
-    margin-top: -12rem;
+.greenText {
+  color: $greenText;
+  font-weight: bold;
+  padding: 0.35rem;
+  @include fluid-type(0.8rem, 1.05rem);
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  .column {
+    margin-top: -11rem;
     margin-left: 3.5rem;
-    @include fluid-type(0.7rem, 1.1rem);
+    @include fluid-type(0.7rem, 1.05rem);
     max-width: 50%;
     margin-bottom: 2rem;
+
+    .genre {
+      display: flex;
+      flex-direction: row;
+      color: $button-border;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      color: white;
+    }
+  }
 }
 
 .spotlight {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  height: 75vh;
-  background-color: hotpink;
+  height: 84vh;
+  background-color: $card-color;
 
   @include for-mobile-only {
     height: 64vh;
@@ -81,8 +109,9 @@
 
   .details {
     z-index: 10;
-    width: 65%;
+    width: 55%;
     margin-left: 3rem;
+    margin-top: 4rem;
     display: flex;
     align-self: center;
     justify-self: center;
@@ -103,14 +132,14 @@
       font-weight: 600;
       padding: 0.4rem;
 
-      @include fluid-type(2rem, 2.5rem);
+      @include fluid-type(2rem, 2.3rem);
     }
   }
 
   .buttonRow {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
