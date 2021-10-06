@@ -8,7 +8,7 @@ import { Genre } from '../../types';
 
 export default function Modal() {
   const { modalData, setIsModal, isModal } = useContext(ModalContext);
-  const { title, banner, rating, overview, genre, id } = modalData;
+  const { title, banner, rating, overview, genre } = modalData;
 
   return (
     <div className={styles.container} style={{ display: isModal ? 'flex' : 'none' }}>
