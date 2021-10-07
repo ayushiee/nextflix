@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -5,7 +6,6 @@ import { motion } from 'framer-motion';
 
 import { Maybe } from '../../types';
 import { CaretDown } from '../../utils/icons';
-import nfLogo from '../../public/assets/nfLogo.png';
 import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
 
@@ -40,7 +40,7 @@ export default function Menu() {
 
   return (
     <>
-      <Image src={nfLogo} alt='' width={90} height={30} className={styles.logo} />
+      <Image src='/assets/logo.png' alt='' width={90} height={30} className={styles.nfLogo} />
       {isTablet || isMobile ? (
         <>
           <div className={styles.browse}>
