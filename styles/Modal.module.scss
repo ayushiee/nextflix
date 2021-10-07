@@ -86,7 +86,7 @@
   align-items: flex-end;
   width: 100%;
   height: 84vh;
-  background-color: $card-color;
+  background-color: $secondary;
 
   @include for-mobile-only {
     height: 64vh;
