@@ -95,6 +95,7 @@
     flex-direction: row;
     align-items: center;
     margin-right: 2rem;
+    z-index: 50;
 
     @include for-mobile-only {
       margin-right: 0.4rem;
@@ -189,6 +190,7 @@
         right: 8;
         border: $button-border solid 1.5px;
         cursor: pointer;
+        z-index: 40;
 
         &:hover {
           border-color: $white;
